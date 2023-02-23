@@ -18,9 +18,16 @@ more_movies = [
   {:title => 'Nomadland', :rating => 'R',
     :release_date => '19-Feb-2021'},
   {:title => 'CODA', :rating => 'PG-13',
-    :release_date => '13-Aug-2021'}
+    :release_date => '13-Aug-2021'},
+  {:title => 'Star Wars: Episode I - The Phantom Menace', :rating => 'PG',
+    :release_date => '16-May-1999'},
+  {:title => 'Star Wars: Episode II - Attack of the Clones', :rating => 'PG',
+    :release_date => '16-May-2002'},
+  {:title => 'Star Wars: Episode III - Revenge of the Sith', :rating => 'PG-13',
+    :release_date => '19-May-2005'}
 ]
 
 more_movies.each do |movie|
-  Movie.create!(movie)
+  # Movie.create!(movie)
+  Movie.where(movie).first_or_create
 end
